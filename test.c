@@ -188,7 +188,11 @@ static int test(const uint8_t *input, size_t input_len, const char output[])
 	}
 }
 
+#ifdef MAIN
 int main(void)
+#else
+int sha_2_main(void)
+#endif
 {
 	size_t i;
 	for (i = 0; i < (sizeof STRING_VECTORS / sizeof(struct string_vector)); i++) {
